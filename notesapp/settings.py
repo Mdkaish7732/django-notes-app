@@ -5,8 +5,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-ca-tbg$&mph9_0_!t$n-vy$ycj77a9xjqdejlpsyj$i--d7mdc'
 
-# ❌ Change this
-DEBUG = False
+# Change this
+DEBUG = True
 
 # ✅ Allow Render domain
 ALLOWED_HOSTS = ['*']
@@ -25,7 +25,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ already correct
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -41,7 +41,7 @@ ROOT_URLCONF = 'notesapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # (ok for now)
+        'DIRS': [BASE_DIR / 'templates'],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
